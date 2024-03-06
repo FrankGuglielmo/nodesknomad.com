@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.location-container {
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight drop shadow */
+  padding: 16px; /* Add padding inside the container */
+  background-color: #ffffff; /* Assuming a white background */
+  margin: 16px; /* Add some margin around the container */
+}
+
+/* Additional styles for your location details could go here */
+.location-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style for your name and type of place */
+h2,
+p {
+  margin: 0; /* Reset default margin */
+}
+
+/* Style for your price and wifi availability */
+.price,
+.wifi {
+  font-size: 0.9em; /* Adjust font size as needed */
+}
