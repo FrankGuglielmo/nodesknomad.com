@@ -8,8 +8,8 @@ const LocationComponent = ({ name, type, price, hasWifi }) => {
       <h2 className="text-xl font-semibold">{name}</h2>
       <p className="text-gray-600">{type}</p>
       <div className="flex justify-between items-center mt-2">
-        <span className="text-sm font-medium text-gray-800">{price}</span>
-        <span className="text-sm font-medium text-gray-500">{wifiAvailability}</span>
+        <span className="text-sm font-medium text-purple-800">{price}</span>
+        <span className="text-sm font-medium text-purple-500">Wifi {wifiAvailability}</span>
       </div>
       {/* Icons would be added here if necessary */}
     </div>

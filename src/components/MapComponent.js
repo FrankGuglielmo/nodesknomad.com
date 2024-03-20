@@ -18,7 +18,7 @@ const MapComponent = ({ coffeeShops }) => {
 
   return (
     // <div className="rounded-map-container" > {/* Apply the class here */}
-      <MapContainer center={defaultPosition} zoom={13} style={{ height: '100vh', width: '100%' }}>
+      <MapContainer center={defaultPosition} zoom={13} style={{ height: '80vh', width: '100%' }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

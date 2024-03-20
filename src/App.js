@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import MapComponent from './components/MapComponent';
 import { GoogleLogin } from '@react-oauth/google';
+import LocationComponent from './components/LocationComponent';
+import LocationData from './data/LocationData';
+
+import InstagramLogo from './images/Instagram_icon.png';
 
 const App = () => {
   const [coffeeShops, setCoffeeShops] = useState([]);
@@ -31,30 +35,39 @@ const App = () => {
 
   
   return (
+
+
+
     <div className="flex flex-col h-screen">
-      {/* Nav bar */}
-      <div className="bg-purple-600 shadow-lg p-4 text-white">
-        <h1>NoDeskNomad.com</h1>
-      </div>
-      
-      {/* Content */}
-      <div className="flex-grow flex p-4 space-x-4">
-        {/* Map component div */}
-        <div className="flex-1 bg-white shadow-lg p-4">
-          {/* Map content here */}
-          <MapComponent coffeeShops={coffeeShops} />
+      {/*Nav bar */}
+      <div className="bg-purple-600 shadow-lg p-4 m-8 text-white rounded-xl flex justify-between items-center">
+        <div className="font-bold text-xl">NoDeskNomad.com</div>
+        <div className="flex gap-4 items-center">
+          <a href="/" className="hover:text-gray-300">About Us</a>
+          <a href="/" className="hover:text-gray-300">Blog</a>
+          <a href="https://www.instagram.com/nodesknomad/" className="hover:text-gray-300">
+            <img src={InstagramLogo} alt="Instagram" className="h-6 w-6" /> {/* Adjust size as needed */}
+          </a>
         </div>
-        
-        {/* Coffee shops list div */}
-        <div className="flex-1 flex flex-col bg-white shadow-lg p-4">
-          {/* Coffee shops list content here */}
+      </div>
+
+      <div className="flex flex-row ml-10 mr-10 shadow-lg">
+        <div className="w-3/5">
+          <MapComponent coffeeShops={LocationData} />
+        </div>
+        <div className="w-2/5">
           {isSignedIn ? (
             <>
               <div className="flex-1">
-                <h2 className="text-lg font-bold">Coffee Shops</h2>
                 <ul>
-                  {coffeeShops.map((shop, index) => (
-                    <li key={index}>{shop.name}</li>
+                  {LocationData.map((shop) => (
+                    <LocationComponent 
+                      key={shop.id}
+                      name={shop.name}
+                      type={shop.type}
+                      price={shop.price}
+                      hasWifi={shop.hasWifi}
+                     />
                   ))}
                 </ul>
               </div>
@@ -68,6 +81,9 @@ const App = () => {
           )}
         </div>
       </div>
+
+
+
     </div>
   );
 };
