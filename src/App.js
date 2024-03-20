@@ -4,8 +4,6 @@ import { GoogleLogin } from '@react-oauth/google';
 import LocationComponent from './components/LocationComponent';
 import LocationData from './data/LocationData';
 
-import { Analytics } from "@vercel/analytics/react"
-
 import InstagramLogo from './images/Instagram_icon.png';
 
 const App = () => {
@@ -22,7 +20,7 @@ const App = () => {
 
   
   return (
-    <Analytics>
+    // <Analytics>
       <div className="flex flex-col h-screen">
         {/*Nav bar */}
         <div className="bg-purple-600 shadow-lg p-4 m-8 text-white rounded-xl flex justify-between items-center">
@@ -61,7 +59,7 @@ const App = () => {
               // Sign in prompt with blurred background
               <div className="w-full p-4 text-center bg-white bg-opacity-50 backdrop-filter backdrop-blur-md">
                 <p>Sign in or Sign up to gain access to more locations!</p>
-                <GoogleLogin onSuccess={responseMessage} onError={errorMessage} clientId= {process.env.GOOGLE_OAUTH_CLIENT_ID} />
+                <GoogleLogin onSuccess={responseMessage} onError={errorMessage} clientId="25637469653-tn51rjv9sn91tdkt9mqameqrm3o9a09l.apps.googleusercontent.com" />
               </div>
             )}
           </div>
@@ -70,7 +68,6 @@ const App = () => {
 
 
       </div>
-    </Analytics>
   );
 };
 
