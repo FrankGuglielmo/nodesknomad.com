@@ -4,8 +4,6 @@ import { GoogleLogin } from '@react-oauth/google';
 import LocationComponent from './components/LocationComponent';
 import LocationData from './data/LocationData';
 
-import { Analytics } from "@vercel/analytics/react"
-
 import InstagramLogo from './images/Instagram_icon.png';
 
 const App = () => {
@@ -22,7 +20,7 @@ const App = () => {
 
   
   return (
-    <Analytics>
+
       <div className="flex flex-col h-screen">
         {/*Nav bar */}
         <div className="bg-purple-600 shadow-lg p-4 m-8 text-white rounded-xl flex justify-between items-center">
@@ -70,7 +68,6 @@ const App = () => {
 
 
       </div>
-    </Analytics>
   );
 };
 
