@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import MapComponent from './components/MapComponent';
 import { GoogleLogin } from '@react-oauth/google';
 import LocationComponent from './components/LocationComponent';
@@ -7,22 +7,7 @@ import LocationData from './data/LocationData';
 import InstagramLogo from './images/Instagram_icon.png';
 
 const App = () => {
-  const [coffeeShops, setCoffeeShops] = useState([]);
   const [isSignedIn, setIsSignedIn] = useState(false);
-
-  useEffect(() => {
-    // Fetch coffee shops data here and update state
-    // For now, we'll use mock data
-    const mockData = [
-      { name: 'Coffee Shop 1', latitude: 37.7689, longitude: -122.4220 },
-      { name: 'Coffee Shop 2', latitude: 37.7749, longitude: -122.4194 },
-      { name: 'Coffee Shop 3', latitude: 37.7649, longitude: -122.4194 },
-      { name: 'Coffee Shop 4', latitude: 37.7849, longitude: -122.4194 },
-
-      // Add more shops here
-    ];
-    setCoffeeShops(mockData);
-  }, []);
 
   const  responseMessage = (response) => {
     console.log(response);
@@ -35,8 +20,6 @@ const App = () => {
 
   
   return (
-
-
 
     <div className="flex flex-col h-screen">
       {/*Nav bar */}
@@ -51,11 +34,11 @@ const App = () => {
         </div>
       </div>
 
-      <div className="flex flex-row ml-10 mr-10 shadow-lg">
+      <div className="flex flex-row ml-10 mr-10 shadow-lg rounded-xl">
         <div className="w-3/5">
           <MapComponent coffeeShops={LocationData} />
         </div>
-        <div className="w-2/5">
+        <div className="w-2/5 ml-2">
           {isSignedIn ? (
             <>
               <div className="flex-1">
