@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import MapComponent from './components/MapComponent';
-
+import { GoogleLogin } from '@react-oauth/google';
 
 const App = () => {
   const [coffeeShops, setCoffeeShops] = useState([]);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
   useEffect(() => {
     // Fetch coffee shops data here and update state
@@ -19,6 +20,16 @@ const App = () => {
     setCoffeeShops(mockData);
   }, []);
 
+  const  responseMessage = (response) => {
+    console.log(response);
+    setIsSignedIn(true);
+  };
+
+  const errorMessage = (error) => {
+    console.log(error);
+  };
+
+  
   return (
     <div className="flex flex-col h-screen">
       {/* Nav bar */}
@@ -37,22 +48,24 @@ const App = () => {
         {/* Coffee shops list div */}
         <div className="flex-1 flex flex-col bg-white shadow-lg p-4">
           {/* Coffee shops list content here */}
-          <div className="flex-1">
-            <h2 className="text-lg font-bold">Coffee Shops</h2>
-            <ul>
-              {coffeeShops.map((shop, index) => (
-                <li key={index}>{shop.name}</li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Sign in prompt with blurred background */}
-          <div className="w-full p-4 text-center bg-white bg-opacity-50 backdrop-filter backdrop-blur-md">
-            <p>Sign in or Sign up to gain access to more locations!</p>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Sign in with Google
-            </button>
-          </div>
+          {isSignedIn ? (
+            <>
+              <div className="flex-1">
+                <h2 className="text-lg font-bold">Coffee Shops</h2>
+                <ul>
+                  {coffeeShops.map((shop, index) => (
+                    <li key={index}>{shop.name}</li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          ) : (
+            // Sign in prompt with blurred background
+            <div className="w-full p-4 text-center bg-white bg-opacity-50 backdrop-filter backdrop-blur-md">
+              <p>Sign in or Sign up to gain access to more locations!</p>
+              <GoogleLogin onSuccess={responseMessage} onError={errorMessage} clientId="25637469653-tn51rjv9sn91tdkt9mqameqrm3o9a09l.apps.googleusercontent.com" />
+            </div>
+          )}
         </div>
       </div>
     </div>
