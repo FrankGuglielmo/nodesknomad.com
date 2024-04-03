@@ -63,3 +63,15 @@ p {
 .wifi {
   font-size: 0.9em; /* Adjust font size as needed */
 }
+
+.powered-by-yelp {
+  display: flex; /* Aligns the text and the image in a row */
+  align-items: center; /* Vertically centers the items in the flex container */
+  gap: 5px; /* Adds some space between the text and the image */
+  /* Add any additional styling you need here */
+}
+
+.powered-by-yelp img {
+  height: 40px; /* Adjust the size of the logo as needed */
+  width: auto; /* Maintains the aspect ratio of the logo */
+}

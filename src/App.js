@@ -9,6 +9,9 @@ import BlogPage from './components/BlogPageComponent';
 import yelpService from './services/YelpService';
 
 import InstagramLogo from './images/Instagram_icon.png';
+import YelpLogo from './images/yelp-logo.png';
+
+import './App.css';
 
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -74,6 +77,12 @@ const App = () => {
                 <div className="w-full p-4 text-center bg-white bg-opacity-50 backdrop-filter backdrop-blur-md">
                   <p>Sign in or Sign up to gain access to more locations!</p>
                   <GoogleLogin onSuccess={responseMessage} onError={errorMessage} clientId= {process.env.GOOGLE_OAUTH_CLIENT_ID} />
+                  {/*Powered by yelp with a link to yelp business for the yelp image */}
+                  <div className="powered-by-yelp flex justify-center">
+                    <span>Powered by</span>
+                    <img src={YelpLogo} alt="Yelp logo" />
+                  </div>
+
                 </div>
               )}
             </div>
