@@ -70,7 +70,12 @@ const App = () => {
                 <>
                   <div className="flex-1 overflow-auto" style={{height: "80vh"}}>
                     <LocationListComponent location={location} cafes={cafes} error={error} />
+                    <div className="powered-by-yelp flex justify-center">
+                      <span>Powered by</span>
+                      <a href='https://www.yelp.com/'><img src={YelpLogo} alt="Yelp logo" /></a>
+                    </div>
                   </div>
+                  
                 </>
               ) : (
                 // Sign in prompt with blurred background
@@ -79,9 +84,9 @@ const App = () => {
                   <GoogleLogin onSuccess={responseMessage} onError={errorMessage} clientId= {process.env.GOOGLE_OAUTH_CLIENT_ID} />
                   {/*Powered by yelp with a link to yelp business for the yelp image */}
                   <div className="powered-by-yelp flex justify-center">
-                    <span>Powered by</span>
-                    <img src={YelpLogo} alt="Yelp logo" />
-                  </div>
+                      <span>Powered by</span>
+                      <a href='https://www.yelp.com/'><img src={YelpLogo} alt="Yelp logo" /></a>
+                    </div>
 
                 </div>
               )}
