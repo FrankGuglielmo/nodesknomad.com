@@ -9,7 +9,7 @@ import AboutComponent from './components/AboutComponent';
 import InstagramLogo from './images/Instagram_icon.png';
 
 const App = () => {
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(true);
 
   const  responseMessage = (response) => {
     console.log(response);
@@ -38,14 +38,14 @@ const App = () => {
             </div>
           </div>
   
-          <div className="flex flex-row ml-10 mr-10 shadow-lg rounded-xl">
+          <div className="flex flex-row ml-10 mr-10 shadow-lg rounded-xl h-svh">
             <div className="w-3/5">
               <MapComponent coffeeShops={LocationData} />
             </div>
-            <div className="w-2/5 ml-2">
+            <div className="w-2/5 ml-2 h-full">
               {isSignedIn ? (
                 <>
-                  <div className="flex-1">
+                  <div className="flex-1 overflow-auto" style={{height: "80vh"}}>
                     <ul>
                       {LocationData.map((shop) => (
                         <LocationComponent 

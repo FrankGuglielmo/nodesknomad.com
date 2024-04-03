@@ -3,6 +3,7 @@ import NoDeskNomadLogo from '../images/NoDeskNomad.png';
 
 const AboutComponent = () => {
     return (
+        
         <div className="flex justify-center items-center h-screen"> 
             <div className="flex flex-col lg:flex-row items-center max-w-6xl mx-auto p-5 bg-white shadow-lg rounded-xl">
                 <div className="lg:w-1/2 p-5">
