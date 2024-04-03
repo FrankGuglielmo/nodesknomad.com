@@ -16,7 +16,7 @@ import { Analytics } from '@vercel/analytics/react';
 import './App.css';
 
 const App = () => {
-  const [isSignedIn, setIsSignedIn] = useState(true);
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const [location, setLocation] = useState(null);
   const [cafes, setCafes] = useState([]);
   const [error, setError] = useState(null);
