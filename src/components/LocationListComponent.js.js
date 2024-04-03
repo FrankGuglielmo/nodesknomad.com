@@ -16,6 +16,7 @@ const LocationListComponent = ({location, cafes, error}) => {
                     />
                 ))
             ) : error ? (
+                console.log(error),
                 <p>Error fetching cafes.</p>
             ) : (
                 <p>Fetching cafes...</p>
