@@ -11,6 +11,8 @@ import yelpService from './services/YelpService';
 import InstagramLogo from './images/Instagram_icon.png';
 import YelpLogo from './images/yelp-logo.png';
 
+import { Analytics } from '@vercel/analytics/react';
+
 import './App.css';
 
 const App = () => {
@@ -46,6 +48,7 @@ const App = () => {
   
   return (
     <Router>
+      <Analytics />
       <Routes>
         <Route path="/" element={
           <div className="flex flex-col h-screen">
