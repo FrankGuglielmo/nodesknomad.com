@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MapComponent from './components/MapComponent';
 import { GoogleLogin } from '@react-oauth/google';
-import LocationComponent from './components/LocationComponent';
 import LocationListComponent from './components/LocationListComponent.js';
-import LocationData from './data/LocationData';
 import AboutComponent from './components/AboutComponent';
+import BlogPage from './components/BlogPageComponent';
 
 import yelpService from './services/YelpService';
 
@@ -52,7 +51,7 @@ const App = () => {
             <a href='/'><div className="font-bold text-2xl">NoDeskNomad.com</div></a>
             <div className="flex gap-4 items-center">
               <a href="/about" className="hover:text-gray-300">About Us</a>
-              <a href="/" className="hover:text-gray-300">Blog</a>
+              <a href="/blog" className="hover:text-gray-300">Blog</a>
               <a href="https://www.instagram.com/nodesknomad/" className="hover:text-gray-300">
                 <img src={InstagramLogo} alt="Instagram" className="h-6 w-6" /> {/* Adjust size as needed */}
               </a>
@@ -82,6 +81,7 @@ const App = () => {
         </div>
         } />
         <Route path="/about" element={<AboutComponent />} />
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
     </Router>
       
