@@ -1,18 +1,22 @@
 import React from 'react';
 
-const Blog = ({ posts }) => {
+const BlogPost = ({ posts }) => {
   return (
     <div className="blog-container mx-auto p-8">
+        <div className="flex flex-wrap justify-center">
       {posts.map((post, index) => (
-        <div key={index} className="blog-post mb-10 p-6 bg-white rounded-lg shadow-md">
-          <h2 className="text-xl font-bold mb-2">{post.name}</h2>
-          <img src={post.picture} alt={post.name} className="w-full h-auto mb-4 rounded" />
-          <p className="text-sm text-gray-600">{post.date}</p>
-          <p className="text-gray-700 mt-4">{post.description}</p>
-        </div>
+          <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-4 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+            <img className="w-full" src={post.picture} alt="Blog Post" />
+            <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">{post.name}</div>
+                <p className="text-gray-700 text-base">{post.date}</p>
+                <p className="text-gray-700 text-base">"{post.description}"</p>
+                </div>
+            </div>
       ))}
+      </div>
     </div>
   );
 };
 
-export default Blog;
+export default BlogPost;
