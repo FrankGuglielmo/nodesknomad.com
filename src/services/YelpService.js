@@ -1,8 +1,8 @@
 
 import axios from 'axios';
 
-// const YELP_API_ENDPOINT = 'https://api.yelp.com/v3/businesses/search';
-const YELP_API_ENDPOINT = 'http://localhost:3001/api/yelp';
+const YELP_API_ENDPOINT = 'https://api.yelp.com/v3/businesses/search';
+// const YELP_API_ENDPOINT = 'http://localhost:3001/api/yelp';
 const API_KEY = process.env.YELP_API_KEY;
 
 
