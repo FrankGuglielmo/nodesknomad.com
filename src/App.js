@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MapComponent from './components/MapComponent';
 import { GoogleLogin } from '@react-oauth/google';
 import LocationComponent from './components/LocationComponent';
+import GeolocationComponent from './components/GeoloactionComponent';
 import LocationData from './data/LocationData';
 import AboutComponent from './components/AboutComponent';
 
@@ -46,17 +47,7 @@ const App = () => {
               {isSignedIn ? (
                 <>
                   <div className="flex-1 overflow-auto" style={{height: "80vh"}}>
-                    <ul>
-                      {LocationData.map((shop) => (
-                        <LocationComponent 
-                          key={shop.id}
-                          name={shop.name}
-                          type={shop.type}
-                          price={shop.price}
-                          hasWifi={shop.hasWifi}
-                        />
-                      ))}
-                    </ul>
+                    <GeolocationComponent />
                   </div>
                 </>
               ) : (
